@@ -6,6 +6,9 @@ import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import com.galataapplab.chatapp.core.util.Routes
+import com.galataapplab.chatapp.ui.login.LoginScreen
+import com.galataapplab.chatapp.ui.login.OTPVerificationScreen
+import com.galataapplab.chatapp.ui.profile.ProfileScreen
 import com.galataapplab.chatapp.ui.walkthrough.WalkthroughScreen
 
 @Composable
@@ -22,8 +25,14 @@ fun Navigation(navController: NavHostController, scaffoldState: ScaffoldState) {
                 navController.navigate(Routes.LOGIN)
             }
         }
-        composable(Routes.LOGIN) {}
-        composable(Routes.VERIFY) {}
-        composable(Routes.PROFILE) {}
+        composable(Routes.LOGIN) {
+            LoginScreen(navController = navController)
+        }
+        composable(Routes.VERIFY) {
+            OTPVerificationScreen(navController = navController)
+        }
+        composable(Routes.PROFILE) {
+            ProfileScreen(navController = navController)
+        }
     }
 }

@@ -16,6 +16,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.style.TextAlign
 import com.galataapplab.chatapp.R.drawable.ic_walkthrough
+import com.galataapplab.chatapp.core.ui.components.PrimaryButton
 import com.galataapplab.chatapp.core.ui.theme.LocalSpacing
 
 @Composable
@@ -49,7 +50,11 @@ fun WalkthroughScreen(
                 textAlign = TextAlign.Center
             )
         }
-        Column() {
+        Column(
+            modifier = Modifier
+                .fillMaxWidth(),
+            horizontalAlignment = Alignment.CenterHorizontally
+        ) {
             Text(
                 text = "Terms & Privacy Policy",
                 style = MaterialTheme.typography.body1,
@@ -58,6 +63,7 @@ fun WalkthroughScreen(
                 modifier = Modifier.fillMaxWidth()
             )
             Spacer(modifier = Modifier.height(spacing.spaceMedium))
+            PrimaryButton(onClick = { onNextClick() }, text = "Start Messaging")
         }
     }
 }

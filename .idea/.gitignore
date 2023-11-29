@@ -6,3 +6,5 @@ gradle.xml
 kotlinc.xml
 misc.xml
 vcs.xml
+modules
+inspectionProfiles
